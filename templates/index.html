@@ -1,0 +1,64 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My website</title>
+</head>
+<body>
+    {% if new_year %}
+    <h1>{{ headline }}</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+    <ul>
+        {%for name in names%}
+        <li>{{name}}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>
+        <a href="{{ url_for('more') }}">See more</a>
+    </h2>
+</body>
+</html>
+
+-->
+
+{% extends "layout.html" %}
+
+{% block heading %}
+    first page
+{% endblock %}
+
+{% block body %}
+ <p>
+     dsfdslkfnasdkjf dsfsdakjnf sdf dsf 
+     ds fsd dsf sdf fsd dsaafsdfdsf sdf dsaafsdfdsff dsaafsdfdsf fsdf dsaafsdfdsff sdf
+      dsf dsf sdff dsf 
+       fdssadf
+        sdf
+ </p>
+<form action="{{ url_for('hello') }}" method="POST">
+    <input type="text" name="name" placeholder="Enter your name">
+    <button>Submit</button>
+</form>
+
+
+<ul>
+    {% for note in notes %}
+    <li>{{ note }}</li>
+    {% endfor %}
+</ul>
+
+
+<form action="{{ url_for('index') }}" method = "POST">
+        <input type="text" name="note" placeholder="Enter note here">
+        <button>Submit</button>
+
+</form>
+
+
+
+ <a href="{{ url_for('more') }}">See more...</a>
+
+ {% endblock %}
